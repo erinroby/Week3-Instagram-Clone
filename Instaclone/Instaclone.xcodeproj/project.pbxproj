@@ -12,6 +12,13 @@
 		0D108CCC1D18E22100AB0FFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D108CCA1D18E22100AB0FFB /* Main.storyboard */; };
 		0D108CCE1D18E22100AB0FFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D108CCD1D18E22100AB0FFB /* Assets.xcassets */; };
 		0D108CD11D18E22100AB0FFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D108CCF1D18E22100AB0FFB /* LaunchScreen.storyboard */; };
+		0D108CD91D18E9E300AB0FFB /* Setup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D108CD81D18E9E300AB0FFB /* Setup.swift */; };
+		0DA32BDB1D19DF34001D4AF9 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DA32BDA1D19DF34001D4AF9 /* CloudKit.framework */; };
+		0DCB70181D19B72200ADAA4F /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB70171D19B72200ADAA4F /* Post.swift */; };
+		0DCB701B1D19B7C100ADAA4F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB701A1D19B7C100ADAA4F /* Extensions.swift */; };
+		0DCB70201D19BB1200ADAA4F /* ModelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB701F1D19BB1200ADAA4F /* ModelExtensions.swift */; };
+		0DCB70221D19C0C900ADAA4F /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB70211D19C0C900ADAA4F /* Filter.swift */; };
+		0DCB70241D19C7B500ADAA4F /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DCB70231D19C7B500ADAA4F /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +29,14 @@
 		0D108CCD1D18E22100AB0FFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D108CD01D18E22100AB0FFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D108CD21D18E22100AB0FFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D108CD81D18E9E300AB0FFB /* Setup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Setup.swift; sourceTree = "<group>"; };
+		0DA32BD91D19DF25001D4AF9 /* Instaclone.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Instaclone.entitlements; sourceTree = "<group>"; };
+		0DA32BDA1D19DF34001D4AF9 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		0DCB70171D19B72200ADAA4F /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		0DCB701A1D19B7C100ADAA4F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		0DCB701F1D19BB1200ADAA4F /* ModelExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelExtensions.swift; sourceTree = "<group>"; };
+		0DCB70211D19C0C900ADAA4F /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		0DCB70231D19C7B500ADAA4F /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DA32BDB1D19DF34001D4AF9 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +54,7 @@
 		0D108CBA1D18E22100AB0FFB = {
 			isa = PBXGroup;
 			children = (
+				0DA32BDA1D19DF34001D4AF9 /* CloudKit.framework */,
 				0D108CC51D18E22100AB0FFB /* Instaclone */,
 				0D108CC41D18E22100AB0FFB /* Products */,
 			);
@@ -54,14 +71,61 @@
 		0D108CC51D18E22100AB0FFB /* Instaclone */ = {
 			isa = PBXGroup;
 			children = (
+				0DA32BD91D19DF25001D4AF9 /* Instaclone.entitlements */,
+				0DA32BD81D19DEBF001D4AF9 /* Controller */,
+				0DCB701C1D19B7C700ADAA4F /* App Global */,
+				0DCB70191D19B78500ADAA4F /* Model */,
+				0DCB701D1D19B7F100ADAA4F /* View */,
+				0DCB701E1D19B7FA00ADAA4F /* Protocol */,
+			);
+			path = Instaclone;
+			sourceTree = "<group>";
+		};
+		0DA32BD81D19DEBF001D4AF9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		0DCB70191D19B78500ADAA4F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0DCB70171D19B72200ADAA4F /* Post.swift */,
+				0DCB701F1D19BB1200ADAA4F /* ModelExtensions.swift */,
+				0DCB70211D19C0C900ADAA4F /* Filter.swift */,
+				0DCB70231D19C7B500ADAA4F /* API.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		0DCB701C1D19B7C700ADAA4F /* App Global */ = {
+			isa = PBXGroup;
+			children = (
 				0D108CC61D18E22100AB0FFB /* AppDelegate.swift */,
-				0D108CC81D18E22100AB0FFB /* ViewController.swift */,
+				0DCB701A1D19B7C100ADAA4F /* Extensions.swift */,
+				0D108CD21D18E22100AB0FFB /* Info.plist */,
+			);
+			name = "App Global";
+			sourceTree = "<group>";
+		};
+		0DCB701D1D19B7F100ADAA4F /* View */ = {
+			isa = PBXGroup;
+			children = (
 				0D108CCA1D18E22100AB0FFB /* Main.storyboard */,
 				0D108CCD1D18E22100AB0FFB /* Assets.xcassets */,
 				0D108CCF1D18E22100AB0FFB /* LaunchScreen.storyboard */,
-				0D108CD21D18E22100AB0FFB /* Info.plist */,
+				0D108CC81D18E22100AB0FFB /* ViewController.swift */,
 			);
-			path = Instaclone;
+			name = View;
+			sourceTree = "<group>";
+		};
+		0DCB701E1D19B7FA00ADAA4F /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				0D108CD81D18E9E300AB0FFB /* Setup.swift */,
+			);
+			name = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +160,12 @@
 				TargetAttributes = {
 					0D108CC21D18E22100AB0FFB = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 4A98EB9QY9;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -135,8 +205,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DCB70221D19C0C900ADAA4F /* Filter.swift in Sources */,
 				0D108CC91D18E22100AB0FFB /* ViewController.swift in Sources */,
+				0DCB70201D19BB1200ADAA4F /* ModelExtensions.swift in Sources */,
+				0DCB701B1D19B7C100ADAA4F /* Extensions.swift in Sources */,
+				0D108CD91D18E9E300AB0FFB /* Setup.swift in Sources */,
 				0D108CC71D18E22100AB0FFB /* AppDelegate.swift in Sources */,
+				0DCB70241D19C7B500ADAA4F /* API.swift in Sources */,
+				0DCB70181D19B72200ADAA4F /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +325,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Instaclone/Instaclone.entitlements;
 				INFOPLIST_FILE = Instaclone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Erin-Roby.Instaclone";
@@ -260,6 +337,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Instaclone/Instaclone.entitlements;
 				INFOPLIST_FILE = Instaclone/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Erin-Roby.Instaclone";
@@ -286,6 +364,7 @@
 				0D108CD71D18E22100AB0FFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
