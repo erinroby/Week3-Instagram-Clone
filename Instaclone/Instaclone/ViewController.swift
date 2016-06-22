@@ -28,6 +28,11 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
         self.navigationItem.title = "Instaclone"
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setToolbarHidden(false, animated:true)
+    }
+    
     func setupAppearance() {
         self.imageView.layer.cornerRadius = 3.0
     }
@@ -63,19 +68,19 @@ class ImageViewController: UIViewController, UIImagePickerControllerDelegate, UI
         guard let image = self.imageView.image else { return } // if the image is blank, we don't want that to work with our button. Nothing to edit!
         
         let actionSheet = UIAlertController(title: "Filter", message: "Please select a Filter", preferredStyle: .ActionSheet)
-        let vintageFilter = UIAlertAction(title: "Vintage", style: .Default) { (action) in Filter.vintage(image) { (theImage) in
+        let vintageFilter = UIAlertAction(title: "Vintage", style: .Default) { (action) in Filter.shared.vintage(image) { (theImage) in
             self.imageView.image = theImage }
             }
-        let bwFilter = UIAlertAction(title: "Black & White", style: .Default) { (action) in Filter.bw(image) { (theImage) in
+        let bwFilter = UIAlertAction(title: "Black & White", style: .Default) { (action) in Filter.shared.bw(image) { (theImage) in
             self.imageView.image = theImage }
         }
-        let chromeFilter = UIAlertAction(title: "Chrome", style: .Default) { (action) in Filter.chrome(image) { (theImage) in
+        let chromeFilter = UIAlertAction(title: "Chrome", style: .Default) { (action) in Filter.shared.chrome(image) { (theImage) in
             self.imageView.image = theImage }
         }
-        let fadeFilter = UIAlertAction(title: "Fade", style: .Default) { (action) in Filter.fade(image) { (theImage) in
+        let fadeFilter = UIAlertAction(title: "Fade", style: .Default) { (action) in Filter.shared.fade(image) { (theImage) in
             self.imageView.image = theImage }
         }
-        let invertFilter = UIAlertAction(title: "Invert", style: .Default) { (action) in Filter.invert(image) { (theImage) in
+        let invertFilter = UIAlertAction(title: "Invert", style: .Default) { (action) in Filter.shared.invert(image) { (theImage) in
             self.imageView.image = theImage }
         }
         let resetAction = UIAlertAction(title: "Reset", style: .Default) { (action) in self.imageView.image = Filter.original }
