@@ -36,6 +36,9 @@ class API {
     func GET(completion: (posts: [Post]?) -> ()) {
         let query = CKQuery(recordType: "Post", predicate: NSPredicate(value: true)) // give me all posts where there is a value.
             self.database.performQuery(query, inZoneWithID: nil) { (records, error) in
+                if let error = error {
+                    print(error)
+                }
                 if let records = records {
                     var posts = [Post]()
                     for record in records {

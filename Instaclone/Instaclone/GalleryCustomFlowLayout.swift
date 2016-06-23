@@ -33,6 +33,4 @@ class GalleryCustomFlowLayout: UICollectionViewFlowLayout {
         let availableWidth = width - (CGFloat(self.columns) * self.space)
         return availableWidth / CGFloat(self.columns)
     }
-    
-
 }

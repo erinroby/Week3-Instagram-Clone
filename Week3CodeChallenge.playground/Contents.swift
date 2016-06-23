@@ -23,5 +23,29 @@ func isOdd(data: [Int]) -> [Int] {
 }
 
 let array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-
 isOdd(array)
+
+// Write a function that computes the list of the first 100 Fibonacci numbers.
+
+func fibonacci() -> [Double] {
+    var results = [Double]()
+    var num1: Double = 0
+    var num2: Double = 1
+    results.append(num1)
+    results.append(num2)
+    
+    while results.count < 100 {
+        let sum = num1 + num2
+        let new = sum
+        results.append(new)
+        num1 = num2
+        num2 = new
+    }
+    
+    return results
+}
+
+fibonacci()
+
+
+
