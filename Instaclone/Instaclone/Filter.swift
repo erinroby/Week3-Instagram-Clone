@@ -14,7 +14,7 @@ typealias FilterCompletion = (theImage: UIImage?) -> ()
 class Filter {
     static let shared = Filter()
     private let context: CIContext
-    static var original = UIImage()
+    var original = UIImage()
     
     private init() {
         let options = [kCIContextWorkingColorSpace : NSNull()] // boilerplate code
@@ -35,6 +35,10 @@ class Filter {
             completion(theImage: UIImage(CGImage: cgImage))
             })
         }
+    }
+    
+    func original(image: UIImage, completion: FilterCompletion) {
+        completion(theImage: self.original)
     }
     
      func vintage(image: UIImage, completion: FilterCompletion) {
